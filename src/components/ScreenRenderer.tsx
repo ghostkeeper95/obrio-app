@@ -99,6 +99,7 @@ const ScreenRenderer = ({ screen }: ScreenRendererProps) => {
         <SurveyLayout>
           <ChoiceQuestion
             question={header}
+            description={screen.description}
             options={screen.options || []}
             onAnswer={value => handleAnswer(value)}
           />
