@@ -8,6 +8,13 @@
   "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": "error",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_", // Ігнорувати аргументи, що починаються з "_"
+        "varsIgnorePattern": "^_" // Ігнорувати змінні, що починаються з "_"
+      }
+    ]
   }
 }
