@@ -1,3 +1,4 @@
+import { use } from 'react'
 import { notFound } from 'next/navigation'
 
 import ScreenRenderer from '@/components/ScreenRenderer'
@@ -12,8 +13,8 @@ export async function generateStaticParams() {
   }))
 }
 
-export default function SurveyPage({ params }: { params: { id: string } }) {
-  const { id } = params
+export default function SurveyPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = use(params)
 
   const screen = surveyData.screens.find(s => s.id === id)
 
